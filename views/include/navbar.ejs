@@ -1,0 +1,42 @@
+<style>
+  .navbar-btn{
+    color: #fff;
+  }
+ .hover{
+  display: inline;
+ }
+</style>
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/listing"><i class="fa-regular fa-compass"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+        
+          <a class="nav-link" href="/listing">Explore</a>
+        </div>
+        <nav class="navbar-btn bg-body-tertiary ms-auto">
+          <div class="container-fluid">
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" id="locationinput" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-hov btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass hover"></i>Search</button>
+            </form>
+          </div>
+        </nav>
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="/listing/new">Airbnb your home</a>
+          <% if(!current){ %>
+            <a class="nav-link " href="/signup"><b>Signup</b></a>
+          <a class="nav-link" href="/login"><b>login</b></a>
+          <%} %>
+          <% if(current){ %>
+             <a class="nav-link" href="/logout">logout</a>
+         <% } %>
+         
+        </div>
+      </div>
+    </div>
+  </nav>

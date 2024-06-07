@@ -1,0 +1,67 @@
+<% layout("/layout/boilerplate") %>
+<div class="row">
+<div class="col-8 offset-2">
+    <br><br>
+<h3>Create a new list</h3>
+    <form method="post" action="/listing" novalidate class="needs-validation" >
+        <div class="mb-3">
+            <label for="title" class="form-label">title</label>
+            <input name="listing[title]" placeholder="enter your title" type="text" class="form-control" required>
+            <div class="valid-feedback">looks goods !</div>
+            <div class="invalid-feedback">please fill</div>
+        </div>
+        <div class="mb-3">
+            <label for="descrption" class="form-label">description</label>
+            <input name="listing[description]" placeholder="description"type="text"  class="form-control" required >
+            <div class="invalid-feedback">please provide description</div>
+        </div>
+       
+        <div class="mb-3">
+            <label for="image" class="form-label">image-link</label>
+            <input name="listing[image]" placeholder="image please"type="text" class="form-control">
+        </div>
+        <div class="row">
+            
+                <div class="mb-3 col-md-4">
+                    <label for="price" class="form-label">price</label>
+                    <input name="listing[price]" placeholder="enter your price"class="form-control" required>
+                    <div class="invalid-feedback">please provide description</div>
+                </div>
+        
+           
+                <div class="mb-3 col-md-8">
+                    <label for="location" class="form-label">location</label>
+                    <input name="listing[location]" placeholder="enter your location" type="text"class="form-control" required>
+                    <div class="invalid-feedback">please provide description</div>
+                </div>
+        
+           
+        </div>
+        <div class="mb-3">
+            <label for="Category" class="form-label">Category</label>
+            <select name="listing[category]" class="form-control" required>
+                <option value="" disabled selected>Choose a category</option>
+                <option value="training">Training</option>
+                <option value="rooms">Rooms</option>
+                <option value="amazing pool">Amazing Pool</option>
+                <option value="farms">Farms</option>
+                <option value="cabins">Cabins</option>
+                <option value="tree house">Tree House</option>
+            </select>
+            <div class="invalid-feedback">Please select a category</div>
+        </div>
+        
+       
+    <div class="mb-3">
+        <label for="country" class="form-label">country</label>
+        <input name="listing[country]" placeholder="enter your country"type="text"class="form-control" required>
+        <div class="invalid-feedback">please provide description</div>
+    </div>
+       
+      <br>
+
+        <button class="btn-add">submit</button>
+        <br><br>
+    </form>
+    </div>
+</div>

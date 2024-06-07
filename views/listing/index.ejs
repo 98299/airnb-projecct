@@ -1,0 +1,120 @@
+<% layout("/layout/boilerplate") %>
+<style>
+#filters{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.fit{
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+}
+.fit:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.inline{
+    display: none;
+}
+.taxswitch{
+    border: 2px solid black;
+    border-radius: 1rem;
+    height: 3rem;
+    padding: 1rem;
+    margin-left: 2rem;
+}
+</style>
+<body>
+    <div id="filters">
+        <div class="fit" data-category="trending" >
+            <div><i class="fa-solid fa-fire"></i></div>
+            <p>Trending</p>
+        </div>
+        <div class="fit"  data-category="rooms">
+            <div><i class="fa-solid fa-bed"></i></div>
+            <p>Rooms</p>
+        </div>
+        <div class="fit"  data-category="amazing pool">
+            <div><i class="fa-solid fa-square-poll-horizontal"></i></div>
+            <p>Amazing Pool</p>
+        </div>
+        <div class="fit"  data-category="farms">
+            <div><i class="fa-solid fa-cow"></i></div>
+            <p>Farms</p>
+        </div>
+        <div class="fit"  data-category="cabins">
+            <div><i class="fa-brands fa-cc-diners-club"></i></div>
+            <p>Cabins</p>
+        </div>
+        <div class="fit"  data-category="tree house">
+            <div><i class="fa-solid fa-tree"></i></div>
+            <p>Tree House</p>
+        </div>
+        <div class="fit"  data-category="golping">
+            <div><i class="fa-solid fa-golf-ball-tee"></i></div>
+            <p>Golfing</p>
+        </div>
+        <div class="fit"  data-category="Lakefront">
+            <div><i class="fa-solid fa-water"></i></div>
+            <p>Lakefront</p>
+        </div>
+        <div class="fit"  data-category="golping">
+            <div><i class="fa-solid fa-golf-ball-tee"></i></div>
+            <p>Golfing</p>
+        </div>
+        <div class="fit"  data-category="Lakefront">
+            <div><i class="fa-solid fa-water"></i></div>
+            <p>Lakefront</p>
+        </div>
+        <div class="taxswitch mb-2">
+            <div class="form-check-reverse form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Display total after tax</label>
+              </div>
+          </div>
+        </div>
+    </div>
+   
+    
+</body>
+   
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+            <%  for(let same of sample){%>
+                <a href="/listing/<%= same.id %>" class="card-li data-category= <%= same.category %>">
+                    <div class="card col listing-card" >
+                        <img src="<%= same.image %>"
+                         class="card-img-top" 
+                         alt="..." 
+                         style="height: 20rem"/>
+                         <div class="card-img-overlay"></div>
+                        <div class="card-body">
+                         <p class="card-text"><%= same.title%></p>
+                         &#8377;<%= same.price .toLocaleString("en-IN") %>/night   <i class="inline"> &nbsp; &nbsp;  +18% gst</i><br>
+                        </p>
+                    
+                    </div>
+                      
+                   </div>
+                </a>
+            <% } %>  
+
+        </div>
+
+ </body>
+ <script>
+     document.addEventListener('DOMContentLoaded', () => {
+    const filters = document.querySelectorAll('.fit');
+
+    filters.forEach(filter => {
+        filter.addEventListener('click', () => {
+            const category = filter.getAttribute('data-category');
+            window.location.href = `/listing/category/${category}`;
+        });
+    });
+  });
+</script>
+ 
+  
